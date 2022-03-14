@@ -12,24 +12,26 @@
 * [postgresql](https://archlinux.org/packages/?name=postgresql) 
 ([ArchWiki](https://wiki.archlinux.org/title/PostgreSQL))
 * rvm
-([ArchWiki](https://wiki.archlinux.org/title/RVM)
-[bash](https://rvm.io/rvm/install)
-[fish](https://rvm.io/integration/fish)
+([ArchWiki](https://wiki.archlinux.org/title/RVM),
+[bash](https://rvm.io/rvm/install),
+[fish](https://rvm.io/integration/fish),
 [digitalocean](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-arch-linux-with-rvm))
-You can also setup (quarry repository)[https://wiki.archlinux.org/title/Unofficial_user_repositories#quarry] to use [Yay](https://github.com/Jguer/yay)
+
+You can also setup [quarry repository](https://wiki.archlinux.org/title/Unofficial_user_repositories#quarry) to use [Yay](https://github.com/Jguer/yay)
 
 ### Install
 * [ruby](https://archlinux.org/packages/?name=ruby)
 ([ArchWiki](https://wiki.archlinux.org/title/Ruby))
 * [ruby-rails](https://aur.archlinux.org/packages/ruby-rails) 
 ([ArchWiki](https://wiki.archlinux.org/title/Ruby_on_Rails))
-* ngrok
-
+* [redis](https://archlinux.org/packages/community/x86_64/redis/)
+([ArchWiki](https://wiki.archlinux.org/title/Redis))
+* [yarn](https://archlinux.org/packages/community/any/yarn/)
+* [ngrok<sup>AUR</sup>](https://aur.archlinux.org/packages/ngrok)
+* [ruby-mailcatcher<sup>AUR</sup>](https://aur.archlinux.org/packages/ruby-mailcatcher)
+* [postman-bin<sup>AUR</sup>](https://aur.archlinux.org/packages/postman-bin)
+(to make tests)
 * sidekiq
-* redis
-* yarn
-* postman (to tests)
-* mailcatcher
 
 ### Pre-setup
 systemctl start postgres.service
