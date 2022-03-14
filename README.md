@@ -10,21 +10,21 @@
 
 
 * [postgresql](https://archlinux.org/packages/?name=postgresql) 
-[[ArchWiki](https://wiki.archlinux.org/title/PostgreSQL)]
+([ArchWiki](https://wiki.archlinux.org/title/PostgreSQL))
 * rvm
-(help
-[1](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-arch-linux-with-rvm)
-[fish](https://rvm.io/integration/fish)
+([ArchWiki](https://wiki.archlinux.org/title/RVM)
 [bash](https://rvm.io/rvm/install)
-[ArchWiki](https://wiki.archlinux.org/title/RVM)
- )
+[fish](https://rvm.io/integration/fish)
+[digitalocean](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-arch-linux-with-rvm))
+You can also setup (quarry repository)[https://wiki.archlinux.org/title/Unofficial_user_repositories#quarry] to use [Yay](https://github.com/Jguer/yay)
 
 ### Install
-* ruby
+* [ruby](https://archlinux.org/packages/?name=ruby)
+([ArchWiki](https://wiki.archlinux.org/title/Ruby))
+* [ruby-rails](https://aur.archlinux.org/packages/ruby-rails) 
+([ArchWiki](https://wiki.archlinux.org/title/Ruby_on_Rails))
 * ngrok
 
-(adicionei repositorio quarry no arch)
-rvm install 2.7.1 ; rvm use 2.7.1
 * sidekiq
 * redis
 * yarn
@@ -40,6 +40,7 @@ mailcatcher & # then open 127.0.0.1:1080
 ngrok http 3000 &
 bundle exec sidekiq -q default -q mailers &
 import ecommerce.postman_collection.json pro postman (to tests)
+rvm install 2.7.1 && rvm use 2.7.1
 
 
 
