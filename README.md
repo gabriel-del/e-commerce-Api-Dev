@@ -19,6 +19,8 @@
 
 You can also setup [quarry repository](https://wiki.archlinux.org/title/Unofficial_user_repositories#quarry) to use [Yay](https://github.com/Jguer/yay)
 
+
+## Setup
 ### Install
 * [ruby](https://archlinux.org/packages/?name=ruby)
 ([ArchWiki](https://wiki.archlinux.org/title/Ruby))
@@ -34,6 +36,7 @@ You can also setup [quarry repository](https://wiki.archlinux.org/title/Unoffici
 * sidekiq
 
 ### Pre-setup
+```bash
 systemctl start postgres.service
 systemctl start redis.service
 bundle install
@@ -41,17 +44,21 @@ rm .config/credentials/
 mailcatcher & # then open 127.0.0.1:1080
 ngrok http 3000 &
 bundle exec sidekiq -q default -q mailers &
-import ecommerce.postman_collection.json pro postman (to tests)
 rvm install 2.7.1 && rvm use 2.7.1
+``
+import ecommerce.postman_collection.json to postman (to make tests)
 
 
 
-
-### Setup
+### Juno
 Register (full) on juno.com.br
-Then on Juno: "Plugins e api" -> "criação de credencial" -> "habilitar token juno"
-Go to app mobile Juno -> "token juno" -> habilitar
-On Juno: "Plugins e api" -> "criar nova credencial" -> set some name, ex: e-commerce-onebitcode -> then put the token on app mobile.
+
+Then on Juno: "Plugins e api" :arrow_right: "criação de credencial" :arrow_right: "habilitar token juno"
+
+Go to app mobile Juno :arrow_right: "token juno" :arrow_right: habilitar
+
+On Juno: "Plugins e api" :arrow_right: "criar nova credencial" :arrow_right: set some name, 
+ex: e-commerce-onebitcode :arrow_right: then put the token on app mobile.
 
 
 EDITOR='code --wait' rails credentials:edit --environment development
@@ -77,10 +84,13 @@ Paste: <ngrok_url>/juno/v1/payment_confirmations?token=<rails_secret>
 ex: https://fc55-164-163-12-151.ngrok.io/juno/v1/payment_confirmations?token=bc663f5fc219ca6af5f2dfd165d6313b50c30fbfa6226031a09e88642703727f7890cf4e10e01
 Where <ngrok_url> is found on 'ngrok http 3000'
 
+### Finish
+```bash
 rails db:create
 rails db:migrate
 rails dev:prime
 rails s 
+```
 
 
 ### Tests
