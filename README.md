@@ -45,7 +45,7 @@ mailcatcher & # then open 127.0.0.1:1080
 ngrok http 3000 &
 bundle exec sidekiq -q default -q mailers &
 rvm install 2.7.1 && rvm use 2.7.1
-``
+```
 import ecommerce.postman_collection.json to postman (to make tests)
 
 
