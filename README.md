@@ -53,16 +53,20 @@ import ecommerce.postman_collection.json to postman (to make tests)
 ### Juno
 Register (full) on juno.com.br
 
-Then on Juno: "Plugins e api" :arrow_right: "criação de credencial" :arrow_right: "habilitar token juno"
+Then on **Juno**: **Plugins e api** :arrow_right: **criação de credencial** :arrow_right: **habilitar token juno**
 
-Go to app mobile Juno :arrow_right: "token juno" :arrow_right: habilitar
+Go to **app mobile Juno** :arrow_right: **token juno** :arrow_right: enable
 
-On Juno: "Plugins e api" :arrow_right: "criar nova credencial" :arrow_right: set some name, 
-ex: e-commerce-onebitcode :arrow_right: then put the token on app mobile.
+On **Juno**: **Plugins e api** :arrow_right: **criar nova credencial** :arrow_right: set some name, 
+ex: *e-commerce-onebitcode* :arrow_right: then put the token on app mobile.
 
-
+```bash
 EDITOR='code --wait' rails credentials:edit --environment development
-will open a file, then paste this:
+```
+
+Will open a file, then paste this:
+
+```
 juno:
   client: "<client>"
   secret: "<secret>"
@@ -70,19 +74,27 @@ juno:
 token:
   auth: "<rails_secret>"
   sidekiq: "58190f057d2f49a079406b6a582b765422d7712bc8e"
+```
 
-where <client> and <secret> is on
-juno: "Plugins e Api"/e-commerce-onebitcode
-<private_token> is on
-juno: "Plugins e Api"/"Token Privado"/"Gerar token privado"
-<rails_secret> run 'rails secret' and take the second part of the last line
-T he"sidekiq" is a random number
+where **<client>** and **<secret>** is on
+
+**Juno**: "Plugins e Api" :arrow_right: **e-commerce-onebitcode**
+
+**<private_token>** is on
+
+**Juno**: **Plugins e Api** :arrow_right: **Token Privado** :arrow_right: **Gerar token privado**
+
+**<rails_secret>**: run '*rails secret*' and take the second part of the last line
+The "*sidekiq*" is a random number
 then close the file
 
-On Juno: "plugins e api"/"notificações de pagamentos" ->
-Paste: <ngrok_url>/juno/v1/payment_confirmations?token=<rails_secret>
+On **Juno**: **plugins e api** :arrow_right: **notificações de pagamentos**
+
+Paste: **<ngrok_url>**/juno/v1/payment_confirmations?token=**<rails_secret>**
+
 ex: https://fc55-164-163-12-151.ngrok.io/juno/v1/payment_confirmations?token=bc663f5fc219ca6af5f2dfd165d6313b50c30fbfa6226031a09e88642703727f7890cf4e10e01
-Where <ngrok_url> is found on 'ngrok http 3000'
+
+Where **<ngrok_url>** is found on '*ngrok http 3000*'
 
 ### Finish
 ```bash
