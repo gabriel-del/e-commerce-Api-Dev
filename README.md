@@ -57,8 +57,8 @@ Then on **Juno**: **Plugins e api** :arrow_right: **criação de credencial** :a
 
 Go to **app mobile Juno** :arrow_right: **token juno** :arrow_right: enable
 
-On **Juno**: **Plugins e api** :arrow_right: **criar nova credencial** :arrow_right: set some name, 
-ex: *e-commerce-onebitcode* :arrow_right: then put the token on app mobile.
+On **Juno**: **Plugins e api** :arrow_right: **criar nova credencial** :arrow_right: set some name
+(ex: *e-commerce-onebitcode*) :arrow_right: then put the token on app mobile.
 
 ```bash
 EDITOR='code --wait' rails credentials:edit --environment development
@@ -106,15 +106,19 @@ rails s
 
 
 ### Tests
-On Postaman
-copy all: access-token, client, uid
-from: ecommerce/Auth/V1"/user/sign_in"/body:
-to: ecommerce/Storefront/V1/Checkouts"/checkouts [boleto]"/body:
+On **Postaman**
 
+copy all: **access-token**, **client** and **uid**
+
+from: ecommerce/Auth/V1/*"user/sign_in"* :arrow_right: body
+
+to: ecommerce/Storefront/V1/Checkouts/*"checkouts [boleto]"* :arrow_right: body
+
+```bash
 rail c:
 User.all
 User.all.where(profile: 'client')
 reload!
 Order.last
-
+```
 
