@@ -1,26 +1,13 @@
 # Ecommerce BackEnd
+Ecommerce BackEnd made using [ruby on rails](https://rubyonrails.org/)
 
+It uses: Devise Token Auth for authentication and Jbuilder for rendering
 
-## Stack
-
-- Rails 6.0.3.3
-- Postgres
-- Devise Token Auth for authentication
-- Jbuilder for rendering
-
-
-* [postgresql](https://archlinux.org/packages/?name=postgresql) 
-([ArchWiki](https://wiki.archlinux.org/title/PostgreSQL))
-* rvm
-([ArchWiki](https://wiki.archlinux.org/title/RVM),
-[bash](https://rvm.io/rvm/install),
-[fish](https://rvm.io/integration/fish),
-[digitalocean](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-arch-linux-with-rvm))
-
-You can also setup [quarry repository](https://wiki.archlinux.org/title/Unofficial_user_repositories#quarry) to use [Yay](https://github.com/Jguer/yay)
+FrontEnd: [https://github.com/gabriel-del/e-commerce-frontend-Dev](https://github.com/gabriel-del/e-commerce-frontend-Dev)
 
 
 ## Setup
+
 ### Install
 * [ruby](https://archlinux.org/packages/?name=ruby)
 ([ArchWiki](https://wiki.archlinux.org/title/Ruby))
@@ -35,7 +22,19 @@ You can also setup [quarry repository](https://wiki.archlinux.org/title/Unoffici
 (to make tests)
 * sidekiq
 
-### Pre-setup
+### Install and config
+* [postgresql](https://archlinux.org/packages/?name=postgresql) 
+([ArchWiki](https://wiki.archlinux.org/title/PostgreSQL))
+* rvm
+([ArchWiki](https://wiki.archlinux.org/title/RVM),
+[bash](https://rvm.io/rvm/install),
+[fish](https://rvm.io/integration/fish),
+[digitalocean](https://www.digitalocean.com/community/tutorials/
+
+how-to-install-ruby-on-rails-on-arch-linux-with-rvm))
+You can also setup [quarry repository](https://wiki.archlinux.org/title/Unofficial_user_repositories#quarry) to use [Yay](https://github.com/Jguer/yay)
+
+### Run daemons
 ```bash
 systemctl start postgres.service
 systemctl start redis.service
@@ -46,7 +45,7 @@ ngrok http 3000 &
 bundle exec sidekiq -q default -q mailers &
 rvm install 2.7.1 && rvm use 2.7.1
 ```
-import ecommerce.postman_collection.json to postman (to make tests)
+import **ecommerce.postman_collection.json** to postman (to make tests)
 
 
 
@@ -78,7 +77,7 @@ token:
 
 where **<client>** and **<secret>** is on
 
-**Juno**: "Plugins e Api" :arrow_right: **e-commerce-onebitcode**
+**Juno**: **Plugins e Api** :arrow_right: **e-commerce-onebitcode**
 
 **<private_token>** is on
 
